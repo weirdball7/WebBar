@@ -33,7 +33,9 @@ const orderDrink = (menu) => {
         if (menu[i].name.toLowerCase() === order.toLowerCase()) {
             alert(`one ${order} coming right up!`);
             customer.money = customer.money - menu[i].price;
-            console.log(customer.money)
+            menu[i].quantity--
+            console.log(`You have: ${customer.money} Shmekels left`);
+            console.log(menu[i].quantity);
             return;
         }
     }
