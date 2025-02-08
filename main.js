@@ -1,5 +1,6 @@
 const orderBtn = document.querySelector('#btn');
-const menuBtn = document.querySelector('#menu-btn')
+const menuBtn = document.querySelector('#menu-btn');
+const bar = document.querySelector('.bar');
 
 const customer = {
     'money': 1000
@@ -33,11 +34,11 @@ const showMenu = (menu) => {
     const itemList = document.createElement('ul');
     for (let i=0; i<menu.length; i++){
         const menuItem = document.createElement('li');
-        menuItem.innerText = menu[i].name;
+        menuItem.innerText = `${menu[i].name} - ${menu[i].price} Shmekels`;
         itemList.appendChild(menuItem);
     }
     menuContainer.appendChild(itemList);
-    document.body.appendChild(menuContainer);
+    bar.appendChild(menuContainer);
 };
 
 const decreasValues = (menu, customer, i) => {
