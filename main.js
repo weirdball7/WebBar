@@ -1,5 +1,9 @@
 const orderBtn = document.querySelector('#btn');
 
+const customer = {
+    'money': 1000
+}
+
 const menu = [
     {
     name: 'Vodka', 
@@ -24,14 +28,18 @@ const menu = [
 ];
 
 const orderDrink = (menu) => {
-    const order = prompt('Hello there!, What`s your poison');
-    menu.forEach((item) => {
-        if(!item.name === order) {
-            alert(`Sorry bud, We dont surve ${order} `);
-        }else{
-            alert(`One ${order} coming right up!`)
+    const order = prompt("What's your poison");
+    for (let i = 0; i < menu.length; i++) {
+        if (menu[i].name.toLowerCase() === order.toLowerCase()) {
+            alert(`one ${order} coming right up!`);
+            customer.money = customer.money - menu[i].price;
+            console.log(customer.money)
+            return;
         }
-    })
+    }
+    alert(`Sorry buddy we don't serve ${order}`);
 };
 
-orderBtn.addEventListener('click', orderDrink);
+orderBtn.addEventListener('click', () => orderDrink(menu));
+
+
