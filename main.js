@@ -27,20 +27,25 @@ const menu = [
     },
 ];
 
+const decreasValues = (menu, customer) => {
+    customer.money = customer.money - menu[i].price;
+    menu[i].quantity--
+    console.log(`You have: ${customer.money} Shmekels left`);
+    console.log(menu[i].quantity);
+};
+
 const orderDrink = (menu) => {
     const order = prompt("What's your poison");
     for (let i = 0; i < menu.length; i++) {
         if (menu[i].name.toLowerCase() === order.toLowerCase()) {
             alert(`one ${order} coming right up!`);
-            customer.money = customer.money - menu[i].price;
-            menu[i].quantity--
-            console.log(`You have: ${customer.money} Shmekels left`);
-            console.log(menu[i].quantity);
+            decreasValues();
             return;
         }
     }
     alert(`Sorry buddy we don't serve ${order}`);
 };
+
 
 orderBtn.addEventListener('click', () => orderDrink(menu));
 
