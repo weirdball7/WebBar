@@ -4,11 +4,13 @@ body {
 }
 
 .bar {
+    /* 
     background-image: url('./bar.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 50%;
     height: 200px;
+    */
     display: flex;
     align-items: center;
     justify-content: center;
