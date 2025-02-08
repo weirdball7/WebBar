@@ -39,6 +39,7 @@ const showMenu = (menu) => {
     }
     menuContainer.appendChild(itemList);
     bar.appendChild(menuContainer);
+    menuBtn.disabled = true;
 };
 
 const decreasValues = (menu, customer, i) => {
