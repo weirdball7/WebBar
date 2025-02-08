@@ -1,4 +1,5 @@
 const orderBtn = document.querySelector('#btn');
+const menuBtn = document.querySelector('#menu-btn')
 
 const customer = {
     'money': 1000
@@ -27,7 +28,19 @@ const menu = [
     },
 ];
 
-const decreasValues = (menu, customer) => {
+const showMenu = (menu) => {
+    const menuContainer = document.createElement('div');
+    const itemList = document.createElement('ul');
+    for (let i=0; i<menu.length; i++){
+        const menuItem = document.createElement('li');
+        menuItem.innerText = menu[i].name;
+        itemList.appendChild(menuItem);
+    }
+    menuContainer.appendChild(itemList);
+    document.body.appendChild(menuContainer);
+};
+
+const decreasValues = (menu, customer, i) => {
     customer.money = customer.money - menu[i].price;
     menu[i].quantity--
     console.log(`You have: ${customer.money} Shmekels left`);
@@ -39,7 +52,7 @@ const orderDrink = (menu) => {
     for (let i = 0; i < menu.length; i++) {
         if (menu[i].name.toLowerCase() === order.toLowerCase()) {
             alert(`one ${order} coming right up!`);
-            decreasValues();
+            decreasValues(menu, customer, i);
             return;
         }
     }
@@ -48,5 +61,6 @@ const orderDrink = (menu) => {
 
 
 orderBtn.addEventListener('click', () => orderDrink(menu));
+menuBtn.addEventListener('click', () => showMenu(menu));
 
 
