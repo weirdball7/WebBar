@@ -4,7 +4,7 @@ body {
 }
 
 .bar {
-    /* 
+    
     background-image: url('./bar.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    /* margin-bottom: 20px; */
+    margin-bottom: 20px;
     top: 10px;
 }
 
