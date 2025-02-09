@@ -51,7 +51,7 @@ const decreasValues = (menu, customer, i) => {
 };
 
 const orderDrink = (menu) => {
-    const order = prompt("What's your poison");
+    const order = prompt("What's your poison?");
     for (let i = 0; i < menu.length; i++) {
         if (menu[i].name.toLowerCase() === order.toLowerCase()) {
             alert(`one ${order} coming right up!`);

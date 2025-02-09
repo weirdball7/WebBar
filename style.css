@@ -4,6 +4,7 @@ body {
 }
 
 .bar {
+    /* 
     background-image: url('./bar.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
