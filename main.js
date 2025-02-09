@@ -31,6 +31,7 @@ const menu = [
 
 const showMenu = (menu) => {
     const menuContainer = document.createElement('div');
+    menuContainer.classList.add('menu')
     const itemList = document.createElement('ul');
     for (let i=0; i<menu.length; i++){
         const menuItem = document.createElement('li');
